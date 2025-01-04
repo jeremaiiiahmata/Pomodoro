@@ -2,7 +2,8 @@
 <p> A simple pomodoro timer created using tkinter in python.</p>
 
 <h2> About the Project </h2>
-![Pomodoro](https://github.com/user-attachments/assets/b13ec42e-498b-4c75-9bbd-1f7f7b504226)
+![image](https://github.com/user-attachments/assets/986819e2-6f5c-4ad3-946a-2e32c67be542)
+
 
 <h3> A full pomodoro has :</h3>
 <ul>
