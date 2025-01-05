@@ -20,6 +20,7 @@ LONG_BREAK = 20 * 60
 
 reps = 0
 sets = 0
+isDarkMode = False
 
 #-------------------- TIMER RESET --------------------
 
@@ -30,7 +31,7 @@ def resetTimer():
     title.config(text="Pomodoro Timer")
     canvas.itemconfig(timer, text="00:00")
     reps = 0
-    print("reset")
+    print("Timer reset")
 
 #-------------------- TIMER START --------------------
 
@@ -72,6 +73,28 @@ def countDown(count):
         global counter
         counter = window.after(1000, countDown, count-1)
 
+#-------------------- TOGGLE MODE --------------------
+
+def toggleMode():
+
+    global isDarkMode
+
+    isDarkMode = not isDarkMode
+
+    if isDarkMode :
+        canvas.configure(bg=TEXT_COLOR)
+        title.config(bg=TEXT_COLOR)
+        copyrightLabel.config(bg=TEXT_COLOR)
+        toggleModeButton.config(text="Light Mode")
+        print("Dark Mode")
+    else :
+        canvas.configure(bg=PRIMARY)
+        title.config(bg=PRIMARY)
+        copyrightLabel.config(bg=PRIMARY)
+        toggleModeButton.config(text="Dark Mode")
+        print("Light Mode")
+
+
 #-------------------- UI SETUP  --------------------
 window = Tk()
 window.title("Pomodoro Timer")
@@ -103,6 +126,11 @@ buttonStart.place(x=317, y=480, width=268, height=108)
 buttonReset = Button()
 buttonReset.config(width=25, height=5, text="Reset", command=resetTimer, font=(FONT, 50, "bold"), borderwidth=0, bg=SECONDARY, fg=TEXT_COLOR)
 buttonReset.place(x=690, y=480, width=268, height=108)
+
+#---- Light/Dark Mode Button
+toggleModeButton = Button()
+toggleModeButton.config(width=10, height=1, text="Dark Mode", command=toggleMode, font=(FONT, 16, "bold"), borderwidth=0, bg=SECONDARY, fg=TEXT_COLOR)
+toggleModeButton.place(x=40, y=51)
 
 
 window.mainloop()
