@@ -24,9 +24,12 @@ sets = 0
 #-------------------- TIMER RESET --------------------
 
 def resetTimer():
+    global reps
+
     window.after_cancel(counter)
     title.config(text="Pomodoro Timer")
     canvas.itemconfig(timer, text="00:00")
+    reps = 0
     print("reset")
 
 #-------------------- TIMER START --------------------

@@ -6,4 +6,7 @@ To run the app, double click the .exe file.
 
 How to use Pomodoro App :
 
-Press the 'START' button
+- Press the 'START' button to start the timer
+- 'RESET' button resets everything even the reps of work.
+
+Project is highly inspired from Angela Yu's 100 Days of Python Course.
